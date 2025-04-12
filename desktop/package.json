@@ -1,0 +1,53 @@
+{
+  "name": "quantum-layer-desktop",
+  "version": "0.1.0",
+  "description": "QuantumLayer Desktop Application",
+  "main": "dist/main.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:electron\" \"npm run dev:next\"",
+    "dev:electron": "cross-env NODE_ENV=development electron-webpack dev",
+    "dev:next": "cd ../web && npm run dev",
+    "build": "next build ../web && electron-webpack",
+    "dist": "electron-builder",
+    "dist:all": "electron-builder -mwl",
+    "dist:mac": "electron-builder --mac",
+    "dist:win": "electron-builder --win",
+    "dist:linux": "electron-builder --linux"
+  },
+  "build": {
+    "productName": "QuantumLayer",
+    "appId": "com.quantumlayer.desktop",
+    "files": [
+      "dist/",
+      "node_modules/",
+      "package.json"
+    ],
+    "mac": {
+      "category": "public.app-category.developer-tools",
+      "icon": "build/icon.icns"
+    },
+    "win": {
+      "icon": "build/icon.ico"
+    },
+    "linux": {
+      "category": "Development",
+      "icon": "build/icon.png"
+    }
+  },
+  "dependencies": {
+    "electron-is-dev": "^2.0.0",
+    "electron-log": "^5.0.0",
+    "electron-updater": "^6.1.4",
+    "source-map-support": "^0.5.21"
+  },
+  "devDependencies": {
+    "@types/node": "^20.10.0",
+    "concurrently": "^8.2.2",
+    "cross-env": "^7.0.3",
+    "electron": "^27.1.0",
+    "electron-builder": "^24.6.4",
+    "electron-webpack": "^2.8.2",
+    "typescript": "^5.3.2",
+    "webpack": "^5.89.0"
+  }
+}
