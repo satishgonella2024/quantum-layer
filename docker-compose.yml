@@ -1,0 +1,37 @@
+version: '3.8'
+
+services:
+  quantum-api:
+    build: .
+    container_name: quantum-api
+    command: serve --host 0.0.0.0 --port 3000
+    ports:
+      - "3000:3000"
+    environment:
+      - NODE_ENV=production
+      - QUANTUM_CONFIG_DIR=/app/.quantum
+    volumes:
+      - quantum-data:/.quantum
+
+  quantum-ui:
+    build: ./web
+    container_name: quantum-ui
+    ports:
+      - "8080:80"
+    depends_on:
+      - quantum-api
+
+  # Optional vector store for memory
+  chroma:
+    image: ghcr.io/chroma-core/chroma:latest
+    container_name: quantum-chroma
+    volumes:
+      - chroma-data:/chroma/chroma
+    ports:
+      - "8000:8000"
+
+volumes:
+  quantum-data:
+    driver: local
+  chroma-data:
+    driver: local
