@@ -1,12 +1,8 @@
 # QuantumLayer Platform
 
-![QuantumLayer Logo](docs/assets/quantum-layer-logo.png)
-
 > QuantumLayer is an AI-native Agent Operating System that enables you to compose, orchestrate, and deploy intelligent agents.
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![npm version](https://img.shields.io/npm/v/quantumctl.svg)](https://www.npmjs.com/package/quantumctl)
-[![GitHub Workflow Status](https://img.shields.io/github/actions/workflow/status/satishgonella2024/quantum-layer/ci.yml?branch=main)](https://github.com/satishgonella2024/quantum-layer/actions)
 
 ## Overview
 
