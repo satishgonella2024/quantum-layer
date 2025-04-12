@@ -1,0 +1,24 @@
+# QuantumLayer Global Configuration
+
+# Default LLM provider to use when not specified
+defaultProvider: openai
+
+# Logging level: debug, info, warn, error
+logLevel: info
+
+# Whether to track token usage and costs
+tokenTracking: true
+
+# Paths where agent configurations can be found
+agentPaths:
+  - ~/.quantum/agents
+  - ./examples/agents
+
+# Path for storing agent memory
+memoryPath: ~/.quantum/memory
+
+# Path for storing execution history
+historyPath: ~/.quantum/history
+
+# Registry configuration
+registryUrl: https://registry.quantumlayer.io
